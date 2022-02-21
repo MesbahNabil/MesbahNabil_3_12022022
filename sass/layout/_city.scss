@@ -1,0 +1,16 @@
+.city {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	background-color: rgb(230, 230, 230);
+	text-align: center;
+	padding: 1rem;
+	h2 {
+		font-weight: 400;
+	}
+
+	i {
+		font-size: 1.2rem;
+	}
+}

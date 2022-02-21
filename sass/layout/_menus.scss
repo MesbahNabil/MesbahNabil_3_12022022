@@ -1,0 +1,28 @@
+.menus {
+	background-color: var(--lightgrey);
+	padding: 0 6rem;
+	@media (max-width: 900px) {
+		padding: 0 2rem;
+	}
+	.menus_cards {
+		display: flex;
+		flex-flow: wrap;
+		gap: 2rem;
+	}
+
+	.card {
+		display: flex;
+		flex-flow: wrap;
+		border: 1px solid black;
+		min-width: 20rem;
+		flex-grow: 1;
+		border-radius: 1rem;
+		.card_image {
+			flex-grow: 1;
+			img {
+				max-width: 20rem;
+				border-radius: 1rem;
+			}
+		}
+	}
+}

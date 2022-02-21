@@ -1,0 +1,266 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+a {
+  -webkit-text-decoration: white;
+          text-decoration: white;
+  color: inherit;
+}
+
+:root {
+  --purple: #9356dc;
+  --pink: #ff79da;
+  --green: #99e2d0;
+  --lightgrey: #f6f6f6;
+  --grey: rgb(230, 230, 230);
+}
+
+.city {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5rem;
+  background-color: #e6e6e6;
+  text-align: center;
+  padding: 1rem;
+}
+
+.city h2 {
+  font-weight: 400;
+}
+
+.city i {
+  font-size: 1.2rem;
+}
+
+.explorer {
+  background-color: var(--lightgrey);
+  text-align: center;
+  padding: 2rem;
+}
+
+.explorer h2 {
+  font-size: 2rem;
+}
+
+.explorer p {
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
+.explorer button {
+  margin-top: 1rem;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(var(--purple)), to(var(--pink)));
+  background-image: linear-gradient(to top, var(--purple), var(--pink));
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  -webkit-box-shadow: 2px 1px 8px -2px black;
+          box-shadow: 2px 1px 8px -2px black;
+}
+
+.explorer button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+header {
+  font-family: "Shrikhand", cursive;
+  text-align: center;
+  font-size: 2rem;
+  -webkit-box-shadow: 0 1px 5px 1px #b3b3b3;
+          box-shadow: 0 1px 5px 1px #b3b3b3;
+  padding: 0.5rem;
+  position: relative;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+.tuto {
+  counter-reset: count;
+  padding: 2rem;
+}
+
+.tuto ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+@media (max-width: 930px) {
+  .tuto ol {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.tuto li {
+  background-color: var(--lightgrey);
+  padding: 1.5rem 2rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-radius: 1rem;
+  -webkit-box-shadow: 2px 1px 8px -2px black;
+          box-shadow: 2px 1px 8px -2px black;
+  position: relative;
+  list-style-type: none;
+}
+
+.tuto li:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.tuto li::before {
+  content: counter(count);
+  counter-increment: count;
+  color: white;
+  background-color: var(--purple);
+  width: 2rem;
+  height: 2rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  left: -1rem;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.tuto li i {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  color: grey;
+}
+
+.menus {
+  background-color: var(--lightgrey);
+  padding: 0 6rem;
+}
+
+@media (max-width: 900px) {
+  .menus {
+    padding: 0 2rem;
+  }
+}
+
+.menus .menus_cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  gap: 2rem;
+}
+
+.menus .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  border: 1px solid black;
+  min-width: 20rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-radius: 1rem;
+}
+
+.menus .card .card_image {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.menus .card .card_image img {
+  max-width: 20rem;
+  border-radius: 1rem;
+}
