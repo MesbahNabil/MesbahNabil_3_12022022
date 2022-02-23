@@ -1,5 +1,5 @@
 .menus {
-	background-color: var(--lightgrey);
+	background-color: $lightgrey;
 	padding: 0 6rem;
 	@media (max-width: 900px) {
 		padding: 0 2rem;
@@ -8,7 +8,7 @@
 		padding-top: 2rem;
 		padding-bottom: 1rem;
 	}
-
+	// "Nouveau" est en pseudo element, il suffit d'ajouter ".new" pour mettre le badge aux nouveaux menus
 	.menus_cards {
 		display: flex;
 		flex-flow: wrap;
@@ -24,13 +24,13 @@
 			.card_image {
 				img {
 					border-radius: 1rem 1rem 0 0;
-
 					width: 100%;
-					// object-fit: cover;
+					max-height: fit-content;
 				}
 			}
 			.card_description {
 				padding: 0.5rem;
+
 				h3 {
 					padding: 0.5rem;
 				}
@@ -40,6 +40,22 @@
 					font-weight: 400;
 				}
 			}
+		}
+		.new {
+			position: relative;
+		}
+		.new::before {
+			content: "Nouveau";
+			position: absolute;
+			height: 2rem;
+			width: 5rem;
+			background-color: $green;
+			color: darken($green, 45%);
+			display: grid;
+			place-items: center;
+			right: 1rem;
+			top: 1rem;
+			border-radius: 3px;
 		}
 	}
 }

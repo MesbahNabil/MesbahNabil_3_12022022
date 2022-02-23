@@ -20,12 +20,11 @@ body {
 }
 
 .explorer {
-	background-color: var(--lightgrey);
+	background-color: $lightgrey;
 	text-align: center;
 	padding: 2rem;
 	h2 {
 		font-size: 2rem;
-		// font-weight: bold;
 	}
 	p {
 		margin-top: 1rem;
@@ -33,7 +32,7 @@ body {
 	}
 	button {
 		margin-top: 1rem;
-		background-image: linear-gradient(to top, var(--purple), var(--pink));
+		background-image: linear-gradient(to top, $purple, $pink);
 		color: white;
 		font-size: 1rem;
 		padding: 1rem 2rem;

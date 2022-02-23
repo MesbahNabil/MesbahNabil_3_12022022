@@ -13,20 +13,24 @@
 		}
 	}
 	li {
-		background-color: var(--lightgrey);
+		background-color: $lightgrey;
 		padding: 1.5rem 2rem;
 		flex-grow: 1;
 		border-radius: 1rem;
 		@include box-shadow;
 		position: relative;
 		&:hover {
+			background-color: lighten($purple, 35%);
 			@include zoom;
+			i {
+				color: $purple;
+			}
 		}
 		&::before {
 			content: counter(count);
 			counter-increment: count;
 			color: white;
-			background-color: var(--purple);
+			background-color: $purple;
 			width: 2rem;
 			height: 2rem;
 			display: grid;
