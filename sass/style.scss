@@ -1,9 +1,6 @@
 @import "base/_reset";
 @import "utils/_var";
-@import "utils/_box-shadow";
-@import "utils/_hover-zoom";
-@import "layout/_city";
-@import "layout/_explorer";
+@import "utils/_mixins";
 @import "layout/_header";
 @import "layout/_main";
 @import "layout/_tuto";

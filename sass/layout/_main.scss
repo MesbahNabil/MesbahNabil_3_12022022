@@ -1,3 +1,49 @@
 body {
 	font-family: "Roboto";
 }
+
+.city {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	background-color: rgb(230, 230, 230);
+	text-align: center;
+	padding: 1rem;
+	h2 {
+		font-weight: 400;
+	}
+
+	i {
+		font-size: 1.2rem;
+	}
+}
+
+.explorer {
+	background-color: var(--lightgrey);
+	text-align: center;
+	padding: 2rem;
+	h2 {
+		font-size: 2rem;
+		// font-weight: bold;
+	}
+	p {
+		margin-top: 1rem;
+		font-weight: 300;
+	}
+	button {
+		margin-top: 1rem;
+		background-image: linear-gradient(to top, var(--purple), var(--pink));
+		color: white;
+		font-size: 1rem;
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: 2rem;
+		transition: 200ms;
+		@include box-shadow;
+	}
+	button:hover {
+		@include zoom;
+		opacity: 0.9;
+	}
+}

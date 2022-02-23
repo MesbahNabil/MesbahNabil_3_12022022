@@ -82,6 +82,20 @@ a {
   --grey: rgb(230, 230, 230);
 }
 
+header {
+  font-family: "Shrikhand", cursive;
+  text-align: center;
+  font-size: 2rem;
+  -webkit-box-shadow: 0 1px 5px 1px #b3b3b3;
+          box-shadow: 0 1px 5px 1px #b3b3b3;
+  padding: 0.5rem;
+  position: relative;
+}
+
+body {
+  font-family: "Roboto";
+}
+
 .city {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,20 +153,7 @@ a {
 .explorer button:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
-}
-
-header {
-  font-family: "Shrikhand", cursive;
-  text-align: center;
-  font-size: 2rem;
-  -webkit-box-shadow: 0 1px 5px 1px #b3b3b3;
-          box-shadow: 0 1px 5px 1px #b3b3b3;
-  padding: 0.5rem;
-  position: relative;
-}
-
-body {
-  font-family: "Roboto";
+  opacity: 0.9;
 }
 
 .tuto {
@@ -161,6 +162,7 @@ body {
 }
 
 .tuto ol {
+  padding-top: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -231,6 +233,11 @@ body {
   }
 }
 
+.menus h2 {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
 .menus .menus_cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -240,27 +247,32 @@ body {
   gap: 2rem;
 }
 
-.menus .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
+.menus .menus_cards .card {
   border: 1px solid black;
-  min-width: 20rem;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   border-radius: 1rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: white;
 }
 
-.menus .card .card_image {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+.menus .menus_cards .card .card_image img {
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
 }
 
-.menus .card .card_image img {
-  max-width: 20rem;
-  border-radius: 1rem;
+.menus .menus_cards .card .card_description {
+  padding: 0.5rem;
+}
+
+.menus .menus_cards .card .card_description h3 {
+  padding: 0.5rem;
+}
+
+.menus .menus_cards .card .card_description span {
+  padding: 0.5rem;
+  display: block;
+  font-weight: 400;
 }
