@@ -148,12 +148,12 @@ body {
   opacity: 0.9;
 }
 
-.tuto {
+.steps {
   counter-reset: count;
   padding: 2rem;
 }
 
-.tuto ol {
+.steps ol {
   padding-top: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,7 +164,7 @@ body {
 }
 
 @media (max-width: 930px) {
-  .tuto ol {
+  .steps ol {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -172,7 +172,7 @@ body {
   }
 }
 
-.tuto li {
+.steps li {
   background-color: #f6f6f6;
   padding: 1.5rem 2rem;
   -webkit-box-flex: 1;
@@ -185,17 +185,23 @@ body {
   list-style-type: none;
 }
 
-.tuto li:hover {
+.steps li i {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  color: grey;
+}
+
+.steps li:hover {
   background-color: #f2eafb;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
 }
 
-.tuto li:hover i {
+.steps li:hover i {
   color: #9356dc;
 }
 
-.tuto li::before {
+.steps li::before {
   content: counter(count);
   counter-increment: count;
   color: white;
@@ -213,20 +219,14 @@ body {
           transform: translateY(50%);
 }
 
-.tuto li i {
-  margin-right: 1rem;
-  font-size: 1.3rem;
-  color: grey;
-}
-
 .menus {
   background-color: #f6f6f6;
-  padding: 0 6rem;
+  padding: 0 6rem 4rem;
 }
 
 @media (max-width: 900px) {
   .menus {
-    padding: 0 2rem;
+    padding: 0 1rem 2rem;
   }
 }
 
@@ -235,17 +235,20 @@ body {
   padding-bottom: 1rem;
 }
 
-.menus .menus_cards {
+.menus__cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 2rem;
+  width: 100%;
 }
 
-.menus .menus_cards .card {
-  border: 1px solid black;
+.card {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -255,33 +258,53 @@ body {
   background-color: white;
 }
 
-.menus .menus_cards .card .card_image img {
+@media (min-width: 1000px) {
+  .card {
+    max-width: 48%;
+    max-height: 20%;
+    min-width: 400px;
+  }
+}
+
+.card__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   border-radius: 1rem 1rem 0 0;
   width: 100%;
-  max-height: -webkit-fit-content;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
+  height: 200px;
 }
 
-.menus .menus_cards .card .card_description {
+.card__description {
+  padding: 0.5rem;
+  position: relative;
+}
+
+.card__description h3 {
   padding: 0.5rem;
 }
 
-.menus .menus_cards .card .card_description h3 {
-  padding: 0.5rem;
-}
-
-.menus .menus_cards .card .card_description span {
+.card__description span {
   padding: 0.5rem;
   display: block;
   font-weight: 400;
 }
 
-.menus .menus_cards .new {
+.card__description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.card--new {
   position: relative;
 }
 
-.menus .menus_cards .new::before {
+.card--new::before {
   content: "Nouveau";
   position: absolute;
   height: 2rem;
@@ -294,4 +317,25 @@ body {
   right: 1rem;
   top: 1rem;
   border-radius: 3px;
+}
+
+footer {
+  background-color: #353535;
+  padding: 2rem;
+  color: white;
+}
+
+footer h2 {
+  font-family: "Shrikhand";
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+footer p {
+  padding: 0.5rem;
+}
+
+footer i {
+  margin-right: 10px;
+  width: 20px;
 }

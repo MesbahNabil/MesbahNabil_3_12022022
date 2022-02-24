@@ -1,61 +1,80 @@
 .menus {
 	background-color: $lightgrey;
-	padding: 0 6rem;
+	padding: 0 6rem 4rem;
 	@media (max-width: 900px) {
-		padding: 0 2rem;
+		padding: 0 1rem 2rem;
 	}
 	h2 {
 		padding-top: 2rem;
 		padding-bottom: 1rem;
 	}
-	// "Nouveau" est en pseudo element, il suffit d'ajouter ".new" pour mettre le badge aux nouveaux menus
-	.menus_cards {
+	// "Nouveau" est en pseudo element, il suffit d'ajouter la class html "new" pour mettre le badge aux nouveaux menus
+	&__cards {
 		display: flex;
-		flex-flow: wrap;
+		flex-wrap: wrap;
+		justify-content: center;
 		gap: 2rem;
+		width: 100%;
+	}
+}
 
-		.card {
-			border: 1px solid black;
-			flex-grow: 1;
-			border-radius: 1rem;
-			justify-content: space-around;
-			background-color: white;
+.card {
+	flex-grow: 1;
+	border-radius: 1rem;
+	justify-content: space-around;
+	background-color: white;
 
-			.card_image {
-				img {
-					border-radius: 1rem 1rem 0 0;
-					width: 100%;
-					max-height: fit-content;
-				}
-			}
-			.card_description {
-				padding: 0.5rem;
+	@media (min-width: 1000px) {
+		max-width: 48%;
+		max-height: 20%;
+		min-width: 400px;
+	}
 
-				h3 {
-					padding: 0.5rem;
-				}
-				span {
-					padding: 0.5rem;
-					display: block;
-					font-weight: 400;
-				}
-			}
-		}
-		.new {
-			position: relative;
-		}
-		.new::before {
-			content: "Nouveau";
-			position: absolute;
-			height: 2rem;
-			width: 5rem;
-			background-color: $green;
-			color: darken($green, 45%);
-			display: grid;
-			place-items: center;
-			right: 1rem;
-			top: 1rem;
-			border-radius: 3px;
+	&__image {
+		img {
+			object-fit: cover;
+			object-position: center;
+			border-radius: 1rem 1rem 0 0;
+			width: 100%;
+			height: 200px;
+			// max-height: fit-content;
 		}
 	}
+	&__description {
+		padding: 0.5rem;
+		position: relative;
+
+		h3 {
+			padding: 0.5rem;
+		}
+		span {
+			padding: 0.5rem;
+			display: block;
+			font-weight: 400;
+		}
+
+		i {
+			font-size: 2rem;
+			position: absolute;
+			right: 1.5rem;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+.card--new {
+	position: relative;
+}
+.card--new::before {
+	content: "Nouveau";
+	position: absolute;
+	height: 2rem;
+	width: 5rem;
+	background-color: $green;
+	color: darken($green, 45%);
+	display: grid;
+	place-items: center;
+	right: 1rem;
+	top: 1rem;
+	border-radius: 3px;
 }
