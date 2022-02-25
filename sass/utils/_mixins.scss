@@ -5,3 +5,29 @@
 @mixin zoom {
 	transform: scale(1.02);
 }
+
+@mixin heart {
+	position: relative;
+	i {
+		font-size: 2rem;
+		position: absolute;
+		right: 1.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.fas {
+		color: transparent;
+		background-image: linear-gradient($purple, $pink);
+		background-clip: text;
+		-webkit-background-clip: text;
+		opacity: 0;
+		transition: 300ms;
+	}
+	&:hover .fas {
+		opacity: 1;
+		transform: translateY(-50%) scale(1.1);
+	}
+	&:hover .far {
+		display: none;
+	}
+}

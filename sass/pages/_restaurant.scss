@@ -1,0 +1,23 @@
+.banner img {
+	display: block;
+	width: 100%;
+	height: 30vh;
+	object-fit: cover;
+	object-position: center;
+
+	@media (min-width: 1000px) {
+		height: 50vh;
+	}
+}
+
+.restaurant__tittle {
+	background: white;
+	margin-top: -2rem;
+	@include heart;
+	border-radius: 2rem 2rem 0 0;
+
+	h2 {
+		padding: 1.5rem 1rem;
+		font-family: "Shrikhand";
+	}
+}

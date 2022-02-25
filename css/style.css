@@ -113,7 +113,7 @@ body {
 }
 
 .explorer {
-  background-color: #f6f6f6;
+  background-color: #f3f3f3;
   text-align: center;
   padding: 2rem;
 }
@@ -173,7 +173,7 @@ body {
 }
 
 .steps li {
-  background-color: #f6f6f6;
+  background-color: #f3f3f3;
   padding: 1.5rem 2rem;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -220,7 +220,7 @@ body {
 }
 
 .menus {
-  background-color: #f6f6f6;
+  background-color: #f3f3f3;
   padding: 0 6rem 4rem;
 }
 
@@ -249,6 +249,8 @@ body {
 }
 
 .card {
+  -webkit-box-shadow: 2px 1px 8px -2px black;
+          box-shadow: 2px 1px 8px -2px black;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -300,6 +302,27 @@ body {
           transform: translateY(-50%);
 }
 
+.card__description .fas {
+  color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.card__description:hover .fas {
+  opacity: 1;
+  -webkit-transform: translateY(-50%) scale(1.1);
+          transform: translateY(-50%) scale(1.1);
+}
+
+.card__description:hover .far {
+  display: none;
+}
+
 .card--new {
   position: relative;
 }
@@ -338,4 +361,62 @@ footer p {
 footer i {
   margin-right: 10px;
   width: 20px;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: 30vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (min-width: 1000px) {
+  .banner img {
+    height: 50vh;
+  }
+}
+
+.restaurant__tittle {
+  background: white;
+  margin-top: -2rem;
+  position: relative;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.restaurant__tittle i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.restaurant__tittle .fas {
+  color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.restaurant__tittle:hover .fas {
+  opacity: 1;
+  -webkit-transform: translateY(-50%) scale(1.1);
+          transform: translateY(-50%) scale(1.1);
+}
+
+.restaurant__tittle:hover .far {
+  display: none;
+}
+
+.restaurant__tittle h2 {
+  padding: 1.5rem 1rem;
+  font-family: "Shrikhand";
 }
