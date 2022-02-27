@@ -5,13 +5,13 @@
 	object-fit: cover;
 	object-position: center;
 
-	@media (min-width: 1000px) {
+	@media (min-width: $breakpoint) {
 		height: 50vh;
 	}
 }
 
-.restaurant__tittle {
-	background: white;
+.tittle {
+	background-color: $lightgrey;
 	margin-top: -2rem;
 	@include heart;
 	border-radius: 2rem 2rem 0 0;
@@ -19,5 +19,89 @@
 	h2 {
 		padding: 1.5rem 1rem;
 		font-family: "Shrikhand";
+	}
+}
+.main-page {
+	padding: 1rem;
+	background-color: $lightgrey;
+}
+
+.menu-page {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+
+	@media (max-width: $breakpoint) {
+		grid-template-columns: 1fr;
+	}
+	&__selection {
+		overflow: hidden;
+		white-space: nowrap;
+
+		h3 {
+			text-transform: uppercase;
+			font-weight: 400;
+		}
+	}
+}
+
+.menu-item {
+	display: flex;
+	background-color: white;
+	border-radius: 1rem;
+
+	&__description {
+		padding: 1rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		h4 {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+	&__price {
+		padding: 0.5rem;
+		font-weight: 900;
+		display: flex;
+		align-items: flex-end;
+		margin-left: auto;
+	}
+	&__check {
+		color: $green;
+		@include grid-center;
+		background-color: $green;
+		margin-right: -3rem;
+		width: 3rem;
+		border-radius: 0 1rem 1rem 0;
+		transition: margin-right 0.5s;
+		flex-shrink: 0;
+
+		i {
+			@include grid-center;
+			background: white;
+			width: 1.5rem;
+			height: 1.5rem;
+			border-radius: 50%;
+		}
+	}
+	&:hover {
+		cursor: pointer;
+		.menu-item__check {
+			margin-right: 0;
+
+			// i {
+			// 	animation: check-spin 0.5s ease-in-out;
+			// 	@keyframes check-spin {
+			// 		from {
+			// 			transform: rotate(-270deg);
+			// 		}
+			// 		to {
+			// 			transform: rotate(0);
+			// 		}
+			// 	}
+			// }
+		}
 	}
 }

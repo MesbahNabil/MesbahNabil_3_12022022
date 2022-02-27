@@ -1,20 +1,27 @@
+// "new" est en pseudo element, il suffit d'ajouter la class html pour les prochains menus
 .menus {
 	background-color: $lightgrey;
 	padding: 0 6rem 4rem;
-	@media (max-width: 900px) {
+	@media (max-width: $breakpoint) {
 		padding: 0 1rem 2rem;
 	}
 	h2 {
 		padding-top: 2rem;
 		padding-bottom: 1rem;
 	}
-	// "Nouveau" est en pseudo element, il suffit d'ajouter la class html "new" pour mettre le badge aux nouveaux menus
+
 	&__cards {
+		// display: grid;
+		// grid-template-columns: repeat(2, 1fr);
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		// justify-content: center;
 		gap: 2rem;
 		width: 100%;
+		@media (max-width: $breakpoint) {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
 	}
 }
 
@@ -25,8 +32,10 @@
 	justify-content: space-around;
 	background-color: white;
 
-	@media (min-width: 1000px) {
-		max-width: 48%;
+	// wip for responsiveness
+	@media (min-width: $breakpoint) {
+		justify-content: space-evenly;
+		max-width: 47%;
 		max-height: 20%;
 		min-width: 400px;
 	}

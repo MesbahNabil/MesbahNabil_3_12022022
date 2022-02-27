@@ -224,7 +224,7 @@ body {
   padding: 0 6rem 4rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .menus {
     padding: 0 1rem 2rem;
   }
@@ -241,11 +241,17 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   gap: 2rem;
   width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .menus__cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .card {
@@ -262,7 +268,10 @@ body {
 
 @media (min-width: 1000px) {
   .card {
-    max-width: 48%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    max-width: 47%;
     max-height: 20%;
     min-width: 400px;
   }
@@ -296,7 +305,7 @@ body {
 .card__description i {
   font-size: 2rem;
   position: absolute;
-  right: 1.5rem;
+  right: 1.4rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -309,8 +318,8 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 0;
-  -webkit-transition: 300ms;
-  transition: 300ms;
+  -webkit-transition: 400ms;
+  transition: 400ms;
 }
 
 .card__description:hover .fas {
@@ -320,7 +329,7 @@ body {
 }
 
 .card__description:hover .far {
-  display: none;
+  opacity: 0;
 }
 
 .card--new {
@@ -379,44 +388,139 @@ footer i {
   }
 }
 
-.restaurant__tittle {
-  background: white;
+.tittle {
+  background-color: #f3f3f3;
   margin-top: -2rem;
   position: relative;
   border-radius: 2rem 2rem 0 0;
 }
 
-.restaurant__tittle i {
+.tittle i {
   font-size: 2rem;
   position: absolute;
-  right: 1.5rem;
+  right: 1.4rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-.restaurant__tittle .fas {
+.tittle .fas {
   color: transparent;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 0;
-  -webkit-transition: 300ms;
-  transition: 300ms;
+  -webkit-transition: 400ms;
+  transition: 400ms;
 }
 
-.restaurant__tittle:hover .fas {
+.tittle:hover .fas {
   opacity: 1;
   -webkit-transform: translateY(-50%) scale(1.1);
           transform: translateY(-50%) scale(1.1);
 }
 
-.restaurant__tittle:hover .far {
-  display: none;
+.tittle:hover .far {
+  opacity: 0;
 }
 
-.restaurant__tittle h2 {
+.tittle h2 {
   padding: 1.5rem 1rem;
   font-family: "Shrikhand";
+}
+
+.main-page {
+  padding: 1rem;
+  background-color: #f3f3f3;
+}
+
+.menu-page {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .menu-page {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.menu-page__selection {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.menu-page__selection h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.menu-item__description {
+  padding: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-item__description h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-item__price {
+  padding: 0.5rem;
+  font-weight: 900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: auto;
+}
+
+.menu-item__check {
+  color: #99e2d0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: #99e2d0;
+  margin-right: -3rem;
+  width: 3rem;
+  border-radius: 0 1rem 1rem 0;
+  -webkit-transition: margin-right 0.5s;
+  transition: margin-right 0.5s;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.menu-item__check i {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+}
+
+.menu-item:hover .menu-item__check {
+  margin-right: 0;
 }
