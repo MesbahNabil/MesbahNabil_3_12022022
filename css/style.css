@@ -77,7 +77,7 @@ a {
 header {
   font-family: "Shrikhand", cursive;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   -webkit-box-shadow: 0 1px 5px 1px #b3b3b3;
           box-shadow: 0 1px 5px 1px #b3b3b3;
   padding: 0.5rem;
@@ -146,6 +146,7 @@ body {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   opacity: 0.9;
+  cursor: pointer;
 }
 
 .steps {
@@ -264,6 +265,8 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: white;
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
 
 @media (min-width: 1000px) {
@@ -332,6 +335,11 @@ body {
   opacity: 0;
 }
 
+.card:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
 .card--new {
   position: relative;
 }
@@ -372,10 +380,37 @@ footer i {
   width: 20px;
 }
 
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+nav .arrow {
+  position: absolute;
+  left: 3%;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+nav .arrow:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
 .banner img {
   display: block;
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -466,6 +501,12 @@ footer i {
   width: 2.9rem;
 }
 
+@media (min-width: 1000px) {
+  .menu-page__selection h3 {
+    font-weight: 400;
+  }
+}
+
 .menu-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -476,6 +517,36 @@ footer i {
   margin-bottom: 1rem;
   -webkit-box-shadow: 2px 1px 8px -2px grey;
           box-shadow: 2px 1px 8px -2px grey;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: apear 1.5s;
+          animation: apear 1.5s;
+}
+
+@-webkit-keyframes apear {
+  from {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes apear {
+  from {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .menu-item__description {
@@ -561,4 +632,35 @@ footer i {
     -webkit-transform: rotate(0);
             transform: rotate(0);
   }
+}
+
+.order {
+  padding-bottom: 2rem;
+  background-color: #f3f3f3;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 15vh;
+}
+
+.order button {
+  width: 30vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(to top, #9356dc, #ff79da);
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  -webkit-box-shadow: 2px 1px 8px -2px grey;
+          box-shadow: 2px 1px 8px -2px grey;
+}
+
+.order button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  opacity: 0.9;
+  cursor: pointer;
 }

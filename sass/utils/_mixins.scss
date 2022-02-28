@@ -37,4 +37,18 @@
 	place-items: center;
 }
 
-// ANIMATIONS
+@mixin button {
+	background-image: linear-gradient(to top, $purple, $pink);
+	color: white;
+	font-size: 1rem;
+	padding: 1rem 2rem;
+	border: none;
+	border-radius: 2rem;
+	transition: 200ms;
+	@include box-shadow;
+	&:hover {
+		@include zoom;
+		opacity: 0.9;
+		cursor: pointer;
+	}
+}

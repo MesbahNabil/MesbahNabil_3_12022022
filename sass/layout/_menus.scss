@@ -31,6 +31,7 @@
 	border-radius: 1rem;
 	justify-content: space-around;
 	background-color: white;
+	transition: 200ms;
 
 	// wip for responsiveness
 	@media (min-width: $breakpoint) {
@@ -62,6 +63,9 @@
 		}
 
 		@include heart;
+	}
+	&:hover {
+		@include zoom;
 	}
 }
 .card--new {
