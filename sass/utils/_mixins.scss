@@ -21,14 +21,23 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		opacity: 0;
-		transition: 400ms;
-	}
-	&:hover .fas {
-		opacity: 1;
-		transform: translateY(-50%) scale(1.1);
-	}
-	&:hover .far {
-		opacity: 0;
+		// transition: 400ms;
+		&:hover {
+			animation: heartgrow 300ms forwards;
+			opacity: 1;
+			transform: translateY(-45%);
+			@keyframes heartgrow {
+				from {
+					scale: 0;
+				}
+				to {
+					scale: 1.1;
+				}
+			}
+		}
+		&:hover .far {
+			opacity: 1;
+		}
 	}
 }
 
@@ -50,5 +59,37 @@
 		@include zoom;
 		opacity: 0.9;
 		cursor: pointer;
+	}
+}
+
+@mixin animation-loop {
+	animation: appear 1s;
+	@keyframes appear {
+		from {
+			transform: translateY(100%);
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@for $i from 1 through 4 {
+		&:nth-child(#{$i}) {
+			animation-delay: 250ms * $i;
+			animation-fill-mode: both;
+		}
+	}
+}
+
+@mixin loader {
+	animation: loader 1s 2s forwards;
+
+	@keyframes loader {
+		from {
+			transform: scale (1);
+		}
+		to {
+			transform: scale(0);
+		}
 	}
 }

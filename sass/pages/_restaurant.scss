@@ -76,18 +76,8 @@ nav {
 	overflow: hidden;
 	margin-bottom: 1rem;
 	@include box-shadow;
-	transition: 0.5s;
-	animation: apear 1.5s;
-	@keyframes apear {
-		from {
-			transform: scale(0.9);
-			opacity: 0;
-		}
-		to {
-			transform: scale(1);
-			opacity: 1;
-		}
-	}
+	@include animation-loop;
+
 	&__description {
 		padding: 1rem;
 		overflow: hidden;
