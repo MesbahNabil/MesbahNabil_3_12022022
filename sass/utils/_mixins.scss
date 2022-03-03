@@ -6,41 +6,6 @@
 	transform: scale(1.02);
 }
 
-@mixin heart {
-	position: relative;
-	i {
-		font-size: 2rem;
-		position: absolute;
-		right: 1.4rem;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	.fas {
-		color: transparent;
-		background-image: linear-gradient($purple, $pink);
-		background-clip: text;
-		-webkit-background-clip: text;
-		opacity: 0;
-		// transition: 400ms;
-		&:hover {
-			animation: heartgrow 300ms forwards;
-			opacity: 1;
-			transform: translateY(-45%);
-			@keyframes heartgrow {
-				from {
-					scale: 0;
-				}
-				to {
-					scale: 1.1;
-				}
-			}
-		}
-		&:hover .far {
-			opacity: 1;
-		}
-	}
-}
-
 @mixin grid-center {
 	display: grid;
 	place-items: center;
@@ -64,6 +29,7 @@
 
 @mixin animation-loop {
 	animation: appear 1s;
+
 	@keyframes appear {
 		from {
 			transform: translateY(100%);
@@ -81,8 +47,47 @@
 	}
 }
 
+@mixin heart {
+	position: relative;
+	i {
+		font-size: 2rem;
+		position: absolute;
+		right: 1.4rem;
+		top: 50%;
+		transform: translateY(-50%);
+
+		cursor: pointer;
+	}
+	.fas {
+		color: transparent;
+		background-image: linear-gradient($purple, $pink);
+		background-clip: text;
+		-webkit-background-clip: text;
+
+		opacity: 0;
+
+		&:hover {
+			opacity: 1;
+			transform: translateY(-50%) scale(1.1);
+			animation: heartgrow 200ms both;
+
+			@keyframes heartgrow {
+				from {
+					scale: 0;
+				}
+				to {
+					scale: 1.1;
+				}
+			}
+		}
+		&:hover .far {
+			opacity: 0;
+		}
+	}
+}
 @mixin loader {
-	animation: loader 1s 2s forwards;
+	animation: loader 0s 2.5s forwards;
+	// transform-origin: ;
 
 	@keyframes loader {
 		from {
@@ -90,6 +95,40 @@
 		}
 		to {
 			transform: scale(0);
+		}
+	}
+}
+
+@mixin beating-heart {
+	background-clip: text;
+	background-image: linear-gradient($purple, $pink);
+	color: transparent;
+	-webkit-background-clip: text;
+
+	position: absolute;
+
+	font-size: 9rem;
+
+	animation: beating-heart 1s infinite both;
+
+	@keyframes beating-heart {
+		0% {
+			transform: translateY(-70%) scale(0.95);
+		}
+		5% {
+			transform: translateY(-70%) scale(1.1);
+		}
+		39% {
+			transform: translateY(-70%) scale(0.85);
+		}
+		45% {
+			transform: translateY(-70%) scale(1);
+		}
+		60% {
+			transform: translateY(-70%) scale(0.95);
+		}
+		100% {
+			transform: translateY(-70%) scale(0.9);
 		}
 	}
 }

@@ -51,6 +51,7 @@ nav {
 	&__selection {
 		padding: 1rem;
 		overflow: hidden;
+		@include animation-loop;
 
 		h3 {
 			padding: 1rem 0rem;

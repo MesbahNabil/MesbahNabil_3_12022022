@@ -88,6 +88,108 @@ body {
   font-family: "Roboto";
 }
 
+.loader {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: #f3f3f3;
+  position: fixed;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.8;
+  -webkit-animation: loader 0s 2.5s forwards;
+          animation: loader 0s 2.5s forwards;
+}
+
+@-webkit-keyframes loader {
+  from {
+    -webkit-transform: scale 1;
+            transform: scale 1;
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes loader {
+  from {
+    -webkit-transform: scale 1;
+            transform: scale 1;
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+.loader .fas {
+  background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  color: transparent;
+  -webkit-background-clip: text;
+  position: absolute;
+  font-size: 9rem;
+  -webkit-animation: beating-heart 1s infinite both;
+          animation: beating-heart 1s infinite both;
+}
+
+@-webkit-keyframes beating-heart {
+  0% {
+    -webkit-transform: translateY(-70%) scale(0.95);
+            transform: translateY(-70%) scale(0.95);
+  }
+  5% {
+    -webkit-transform: translateY(-70%) scale(1.1);
+            transform: translateY(-70%) scale(1.1);
+  }
+  39% {
+    -webkit-transform: translateY(-70%) scale(0.85);
+            transform: translateY(-70%) scale(0.85);
+  }
+  45% {
+    -webkit-transform: translateY(-70%) scale(1);
+            transform: translateY(-70%) scale(1);
+  }
+  60% {
+    -webkit-transform: translateY(-70%) scale(0.95);
+            transform: translateY(-70%) scale(0.95);
+  }
+  100% {
+    -webkit-transform: translateY(-70%) scale(0.9);
+            transform: translateY(-70%) scale(0.9);
+  }
+}
+
+@keyframes beating-heart {
+  0% {
+    -webkit-transform: translateY(-70%) scale(0.95);
+            transform: translateY(-70%) scale(0.95);
+  }
+  5% {
+    -webkit-transform: translateY(-70%) scale(1.1);
+            transform: translateY(-70%) scale(1.1);
+  }
+  39% {
+    -webkit-transform: translateY(-70%) scale(0.85);
+            transform: translateY(-70%) scale(0.85);
+  }
+  45% {
+    -webkit-transform: translateY(-70%) scale(1);
+            transform: translateY(-70%) scale(1);
+  }
+  60% {
+    -webkit-transform: translateY(-70%) scale(0.95);
+            transform: translateY(-70%) scale(0.95);
+  }
+  100% {
+    -webkit-transform: translateY(-70%) scale(0.9);
+            transform: translateY(-70%) scale(0.9);
+  }
+}
+
 .city {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -194,8 +296,6 @@ body {
 
 .steps li:hover {
   background-color: #f2eafb;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
 }
 
 .steps li:hover i {
@@ -312,6 +412,7 @@ body {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .card__description .fas {
@@ -324,11 +425,11 @@ body {
 }
 
 .card__description .fas:hover {
-  -webkit-animation: heartgrow 300ms forwards;
-          animation: heartgrow 300ms forwards;
   opacity: 1;
-  -webkit-transform: translateY(-45%);
-          transform: translateY(-45%);
+  -webkit-transform: translateY(-50%) scale(1.1);
+          transform: translateY(-50%) scale(1.1);
+  -webkit-animation: heartgrow 200ms both;
+          animation: heartgrow 200ms both;
 }
 
 @-webkit-keyframes heartgrow {
@@ -350,7 +451,7 @@ body {
 }
 
 .card__description .fas:hover .far {
-  opacity: 1;
+  opacity: 0;
 }
 
 .card:hover {
@@ -455,6 +556,7 @@ nav .arrow:hover {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .tittle .fas {
@@ -467,11 +569,11 @@ nav .arrow:hover {
 }
 
 .tittle .fas:hover {
-  -webkit-animation: heartgrow 300ms forwards;
-          animation: heartgrow 300ms forwards;
   opacity: 1;
-  -webkit-transform: translateY(-45%);
-          transform: translateY(-45%);
+  -webkit-transform: translateY(-50%) scale(1.1);
+          transform: translateY(-50%) scale(1.1);
+  -webkit-animation: heartgrow 200ms both;
+          animation: heartgrow 200ms both;
 }
 
 @keyframes heartgrow {
@@ -484,7 +586,7 @@ nav .arrow:hover {
 }
 
 .tittle .fas:hover .far {
-  opacity: 1;
+  opacity: 0;
 }
 
 .tittle h2 {
@@ -513,6 +615,58 @@ nav .arrow:hover {
 .menu-page__selection {
   padding: 1rem;
   overflow: hidden;
+  -webkit-animation: appear 1s;
+          animation: appear 1s;
+}
+
+@-webkit-keyframes appear {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-page__selection:nth-child(1) {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.menu-page__selection:nth-child(2) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.menu-page__selection:nth-child(3) {
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.menu-page__selection:nth-child(4) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 .menu-page__selection h3 {
@@ -546,17 +700,6 @@ nav .arrow:hover {
           box-shadow: 2px 1px 8px -2px grey;
   -webkit-animation: appear 1s;
           animation: appear 1s;
-}
-
-@-webkit-keyframes appear {
-  from {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes appear {
