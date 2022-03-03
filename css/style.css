@@ -410,8 +410,8 @@ body {
   position: absolute;
   right: 1.4rem;
   top: 50%;
+  transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   cursor: pointer;
 }
 
@@ -425,11 +425,11 @@ body {
 }
 
 .card__description .fas:hover {
-  opacity: 1;
   -webkit-transform: translateY(-50%) scale(1.1);
           transform: translateY(-50%) scale(1.1);
   -webkit-animation: heartgrow 200ms both;
           animation: heartgrow 200ms both;
+  opacity: 1;
 }
 
 @-webkit-keyframes heartgrow {
@@ -554,8 +554,8 @@ nav .arrow:hover {
   position: absolute;
   right: 1.4rem;
   top: 50%;
+  transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   cursor: pointer;
 }
 
@@ -569,11 +569,11 @@ nav .arrow:hover {
 }
 
 .tittle .fas:hover {
-  opacity: 1;
   -webkit-transform: translateY(-50%) scale(1.1);
           transform: translateY(-50%) scale(1.1);
   -webkit-animation: heartgrow 200ms both;
           animation: heartgrow 200ms both;
+  opacity: 1;
 }
 
 @keyframes heartgrow {

@@ -55,6 +55,7 @@
 		right: 1.4rem;
 		top: 50%;
 		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
 
 		cursor: pointer;
 	}
@@ -67,10 +68,11 @@
 		opacity: 0;
 
 		&:hover {
-			opacity: 1;
 			transform: translateY(-50%) scale(1.1);
+
 			animation: heartgrow 200ms both;
 
+			opacity: 1;
 			@keyframes heartgrow {
 				from {
 					scale: 0;
