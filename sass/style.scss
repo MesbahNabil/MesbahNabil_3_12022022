@@ -1,8 +1,7 @@
 @import "./base/_reset";
-@import "./utils/_var";
 @import "./utils/_mixins";
+@import "./utils/_var";
 @import "./layout/_header";
-@import "./layout/_homepage";
-@import "./layout/_menus";
 @import "./layout/_footer";
+@import "./pages/_homepage";
 @import "./pages/_restaurant";

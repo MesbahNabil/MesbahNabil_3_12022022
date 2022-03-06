@@ -84,6 +84,34 @@ header {
   position: relative;
 }
 
+footer {
+  background-color: #353535;
+  padding: 2rem;
+  color: white;
+}
+
+footer h2 {
+  font-family: "Shrikhand";
+  font-weight: 500;
+  padding: 2rem 0;
+}
+
+footer p {
+  padding: 0.5rem;
+}
+
+@media (min-width: 1600px) {
+  footer p {
+    display: inline;
+    padding-right: 6rem;
+    text-align: center;
+  }
+}
+
+footer p i {
+  margin-right: 10px;
+}
+
 body {
   font-family: "Roboto";
 }
@@ -98,29 +126,32 @@ body {
   inset: 0;
   z-index: 1;
   opacity: 0.8;
-  -webkit-animation: loader 0s 2.5s forwards;
-          animation: loader 0s 2.5s forwards;
+  width: 100%;
+  -webkit-animation: loader forwards;
+          animation: loader forwards;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 
 @-webkit-keyframes loader {
-  from {
-    -webkit-transform: scale 1;
-            transform: scale 1;
+  0% {
+    opacity: 0.8;
   }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+  100% {
+    opacity: 0;
+    scale: 0;
   }
 }
 
 @keyframes loader {
-  from {
-    -webkit-transform: scale 1;
-            transform: scale 1;
+  0% {
+    opacity: 0.8;
   }
-  to {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+  100% {
+    opacity: 0;
+    scale: 0;
   }
 }
 
@@ -132,8 +163,16 @@ body {
   -webkit-background-clip: text;
   position: absolute;
   font-size: 9rem;
-  -webkit-animation: beating-heart 1s infinite both;
-          animation: beating-heart 1s infinite both;
+  -webkit-animation: beating-heart 1s both;
+          animation: beating-heart 1s both;
+  -webkit-animation-iteration-count: 4;
+          animation-iteration-count: 4;
+}
+
+@media (max-width: 435px) {
+  .loader .fas {
+    font-size: 7rem;
+  }
 }
 
 @-webkit-keyframes beating-heart {
@@ -215,6 +254,16 @@ body {
 }
 
 .explorer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #f3f3f3;
   text-align: center;
   padding: 2rem;
@@ -229,8 +278,9 @@ body {
   font-weight: 300;
 }
 
-.explorer button {
-  margin-top: 1rem;
+.explorer .button {
+  margin: auto;
+  margin-top: 2rem;
   background-image: -webkit-gradient(linear, left bottom, left top, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(to top, #9356dc, #ff79da);
   color: white;
@@ -242,9 +292,11 @@ body {
   transition: 200ms;
   -webkit-box-shadow: 2px 1px 8px -2px grey;
           box-shadow: 2px 1px 8px -2px grey;
+  width: 20rem;
+  text-align: center;
 }
 
-.explorer button:hover {
+.explorer .button:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   opacity: 0.9;
@@ -342,6 +394,9 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 2rem;
   width: 100%;
 }
@@ -356,6 +411,7 @@ body {
 }
 
 .card {
+  position: relative;
   -webkit-box-shadow: 2px 1px 8px -2px grey;
           box-shadow: 2px 1px 8px -2px grey;
   -webkit-box-flex: 1;
@@ -375,8 +431,7 @@ body {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     max-width: 47%;
-    max-height: 20%;
-    min-width: 400px;
+    width: 30rem;
   }
 }
 
@@ -396,11 +451,11 @@ body {
 }
 
 .card__description h3 {
-  padding: 0.5rem;
+  padding: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .card__description span {
-  padding: 0.5rem;
+  padding: 0 0.5rem 0.5rem 0.5rem;
   display: block;
   font-weight: 400;
 }
@@ -416,42 +471,51 @@ body {
 }
 
 .card__description .fas {
-  color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.card__description .fas {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
   opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
 .card__description .fas:hover {
+  opacity: 1;
   -webkit-transform: translateY(-50%) scale(1.1);
           transform: translateY(-50%) scale(1.1);
-  -webkit-animation: heartgrow 200ms both;
-          animation: heartgrow 200ms both;
-  opacity: 1;
+  -webkit-animation: heartgrow 200ms forwards;
+          animation: heartgrow 200ms forwards;
 }
 
 @-webkit-keyframes heartgrow {
-  from {
+  0% {
     scale: 0;
+    -webkit-transform: translateY(-45%);
+            transform: translateY(-45%);
   }
   to {
-    scale: 1.1;
+    scale: 1;
   }
 }
 
 @keyframes heartgrow {
-  from {
+  0% {
     scale: 0;
+    -webkit-transform: translateY(-45%);
+            transform: translateY(-45%);
   }
   to {
-    scale: 1.1;
+    scale: 1;
   }
-}
-
-.card__description .fas:hover .far {
-  opacity: 0;
 }
 
 .card:hover {
@@ -478,25 +542,13 @@ body {
   border-radius: 3px;
 }
 
-footer {
-  background-color: #353535;
-  padding: 2rem;
-  color: white;
-}
-
-footer h2 {
-  font-family: "Shrikhand";
-  font-weight: 500;
-  padding: 1rem 0;
-}
-
-footer p {
-  padding: 0.5rem;
-}
-
-footer i {
-  margin-right: 10px;
-  width: 20px;
+@media (min-width: 1600px) {
+  .steps,
+  .menus {
+    margin-right: 10rem;
+    margin-left: 10rem;
+    border-radius: 2rem;
+  }
 }
 
 nav {
@@ -560,33 +612,40 @@ nav .arrow:hover {
 }
 
 .tittle .fas {
-  color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.tittle .fas {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
   opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
 }
 
 .tittle .fas:hover {
+  opacity: 1;
   -webkit-transform: translateY(-50%) scale(1.1);
           transform: translateY(-50%) scale(1.1);
-  -webkit-animation: heartgrow 200ms both;
-          animation: heartgrow 200ms both;
-  opacity: 1;
+  -webkit-animation: heartgrow 200ms forwards;
+          animation: heartgrow 200ms forwards;
 }
 
 @keyframes heartgrow {
-  from {
+  0% {
     scale: 0;
+    -webkit-transform: translateY(-45%);
+            transform: translateY(-45%);
   }
   to {
-    scale: 1.1;
+    scale: 1;
   }
-}
-
-.tittle .fas:hover .far {
-  opacity: 0;
 }
 
 .tittle h2 {
@@ -601,8 +660,8 @@ nav .arrow:hover {
 .menu-page {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: repeat(3, 1fr);
 }
 
 @media (max-width: 1000px) {
@@ -665,6 +724,13 @@ nav .arrow:hover {
 .menu-page__selection:nth-child(4) {
   -webkit-animation-delay: 1000ms;
           animation-delay: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.menu-page__selection:nth-child(5) {
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
 }
@@ -737,6 +803,13 @@ nav .arrow:hover {
 .menu-item:nth-child(4) {
   -webkit-animation-delay: 1000ms;
           animation-delay: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.menu-item:nth-child(5) {
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
 }
@@ -835,8 +908,8 @@ nav .arrow:hover {
   height: 15vh;
 }
 
-.order button {
-  width: 30vh;
+.order .button {
+  min-width: 30vh;
   background-image: -webkit-gradient(linear, left bottom, left top, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(to top, #9356dc, #ff79da);
   color: white;
@@ -848,11 +921,21 @@ nav .arrow:hover {
   transition: 200ms;
   -webkit-box-shadow: 2px 1px 8px -2px grey;
           box-shadow: 2px 1px 8px -2px grey;
+  text-align: center;
 }
 
-.order button:hover {
+.order .button:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   opacity: 0.9;
   cursor: pointer;
+}
+
+@media (min-width: 1600px) {
+  main,
+  .tittle,
+  .order {
+    margin-right: 10rem;
+    margin-left: 10rem;
+  }
 }

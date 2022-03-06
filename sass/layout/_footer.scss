@@ -1,17 +1,23 @@
 footer {
 	background-color: $darkgrey;
+
 	padding: 2rem;
 	color: white;
 	h2 {
 		font-family: "Shrikhand";
 		font-weight: 500;
-		padding: 1rem 0;
+		padding: 2rem 0;
 	}
 	p {
 		padding: 0.5rem;
-	}
-	i {
-		margin-right: 10px;
-		width: 20px;
+
+		@media (min-width: 1600px) {
+			display: inline;
+			padding-right: 6rem;
+			text-align: center;
+		}
+		i {
+			margin-right: 10px;
+		}
 	}
 }

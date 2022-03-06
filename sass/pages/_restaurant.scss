@@ -42,8 +42,10 @@ nav {
 }
 
 .menu-page {
+	display: -ms-grid;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	-ms-grid-columns: repeat(3, 1fr);
 
 	@media (max-width: $breakpoint) {
 		grid-template-columns: 1fr;
@@ -140,8 +142,18 @@ nav {
 	background-color: $lightgrey;
 	@include grid-center;
 	height: 15vh;
-	button {
-		width: 30vh;
+	.button {
+		min-width: 30vh;
 		@include button;
+		text-align: center;
+	}
+}
+
+main,
+.tittle,
+.order {
+	@media (min-width: 1600px) {
+		margin-right: 10rem;
+		margin-left: 10rem;
 	}
 }

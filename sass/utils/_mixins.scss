@@ -39,7 +39,7 @@
 			opacity: 1;
 		}
 	}
-	@for $i from 1 through 4 {
+	@for $i from 1 through 5 {
 		&:nth-child(#{$i}) {
 			animation-delay: 250ms * $i;
 			animation-fill-mode: both;
@@ -49,6 +49,7 @@
 
 @mixin heart {
 	position: relative;
+
 	i {
 		font-size: 2rem;
 		position: absolute;
@@ -56,62 +57,71 @@
 		top: 50%;
 		transform: translateY(-50%);
 		-webkit-transform: translateY(-50%);
-
 		cursor: pointer;
 	}
 	.fas {
-		color: transparent;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+	.fas {
 		background-image: linear-gradient($purple, $pink);
 		background-clip: text;
 		-webkit-background-clip: text;
-
+		color: transparent;
 		opacity: 0;
-
+		transition: 200ms ease-in-out;
 		&:hover {
+			opacity: 1;
 			transform: translateY(-50%) scale(1.1);
 
-			animation: heartgrow 200ms both;
+			animation: heartgrow 200ms forwards;
 
-			opacity: 1;
 			@keyframes heartgrow {
-				from {
+				0% {
 					scale: 0;
+					transform: translateY(-45%);
 				}
 				to {
-					scale: 1.1;
+					scale: 1;
 				}
 			}
 		}
-		&:hover .far {
-			opacity: 0;
-		}
 	}
 }
+
 @mixin loader {
-	animation: loader 0s 2.5s forwards;
-	// transform-origin: ;
+	width: 100%;
+	animation: loader forwards;
+	animation-duration: 0.5s;
+	animation-delay: 2s;
+	// transform-origin: top;
 
 	@keyframes loader {
-		from {
-			transform: scale (1);
+		0% {
+			opacity: 0.8;
 		}
-		to {
-			transform: scale(0);
+
+		100% {
+			opacity: 0;
+			scale: 0;
 		}
 	}
 }
 
+// iteration count pour eviter d'utiliser "infinite" et optimiser la homepage.
 @mixin beating-heart {
 	background-clip: text;
 	background-image: linear-gradient($purple, $pink);
 	color: transparent;
 	-webkit-background-clip: text;
-
 	position: absolute;
-
 	font-size: 9rem;
+	animation: beating-heart 1s both;
+	animation-iteration-count: 4;
 
-	animation: beating-heart 1s infinite both;
+	@media (max-width: 435px) {
+		font-size: 7rem;
+	}
 
 	@keyframes beating-heart {
 		0% {
