@@ -114,6 +114,7 @@ footer p i {
 
 body {
   font-family: "Roboto";
+  height: 100%;
 }
 
 .loader {
@@ -549,11 +550,37 @@ body {
 }
 
 @media (min-width: 1600px) {
-  .steps,
   .menus {
+    margin: 5rem 10rem 5rem 10rem;
+    border-radius: 2rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .menus {
+    margin: 5rem 20rem 5rem 20rem;
+    border-radius: 2rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .menus h2 {
+    padding: 2rem 1rem 2rem 1rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .steps {
+    padding: 3rem 0rem 3rem 0rem;
     margin-right: 10rem;
     margin-left: 10rem;
-    border-radius: 2rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .steps {
+    margin-right: 20rem;
+    margin-left: 20rem;
   }
 }
 

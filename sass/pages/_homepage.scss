@@ -1,5 +1,6 @@
 body {
 	font-family: "Roboto";
+	height: 100%;
 }
 
 .loader {
@@ -59,11 +60,11 @@ body {
 	}
 }
 
+// I used css counters to generate numbers automatically before the tutorials
 .steps {
 	counter-reset: count;
 	padding: 2rem;
 
-	// I used css counters to generate numbers automatically before the tutorials
 	ol {
 		padding-top: 2rem;
 		display: flex;
@@ -151,8 +152,6 @@ body {
 	@media (min-width: $breakpoint) {
 		justify-content: space-evenly;
 		max-width: 47%;
-
-		// min-width: 400px;
 		width: 30rem;
 	}
 
@@ -200,11 +199,32 @@ body {
 	border-radius: 3px;
 }
 
-.steps,
+// Big sized screen media queries
+
 .menus {
 	@media (min-width: 1600px) {
+		margin: 5rem 10rem 5rem 10rem;
+
+		border-radius: 2rem;
+	}
+	@media (min-width: 2000px) {
+		margin: 5rem 20rem 5rem 20rem;
+		border-radius: 2rem;
+	}
+	h2 {
+		@media (min-width: 1000px) {
+			padding: 2rem 1rem 2rem 1rem;
+		}
+	}
+}
+.steps {
+	@media (min-width: 1600px) {
+		padding: 3rem 0rem 3rem 0rem;
 		margin-right: 10rem;
 		margin-left: 10rem;
-		border-radius: 2rem;
+	}
+	@media (min-width: 2000px) {
+		margin-right: 20rem;
+		margin-left: 20rem;
 	}
 }
