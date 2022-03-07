@@ -112,7 +112,6 @@ body {
 	}
 }
 
-// "new" est en pseudo element, il suffit d'ajouter la class html pour les prochains menus
 .menus {
 	background-color: $lightgrey;
 	padding: 0 6rem 4rem;
@@ -178,10 +177,9 @@ body {
 
 		@include heart;
 	}
-	&:hover {
-		@include zoom;
-	}
 }
+
+// "new" est en pseudo element, il suffit d'ajouter la class html pour les prochains menus
 .card--new {
 	position: relative;
 }
