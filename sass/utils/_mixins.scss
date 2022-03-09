@@ -1,6 +1,9 @@
 @mixin box-shadow {
 	box-shadow: 2px 1px 8px -2px grey;
 }
+@mixin darkerbox-shadow {
+	box-shadow: 4px 3px 17px -4px black;
+}
 
 @mixin zoom {
 	transform: scale(1.02);
@@ -19,8 +22,8 @@
 	border: none;
 	border-radius: 2rem;
 	transition: 200ms;
-	@include box-shadow;
 	&:hover {
+		@include darkerbox-shadow;
 		@include zoom;
 		opacity: 0.9;
 		cursor: pointer;
@@ -59,11 +62,10 @@
 		-webkit-transform: translateY(-50%);
 		cursor: pointer;
 	}
+
 	.fas {
 		-webkit-user-select: none;
 		user-select: none;
-	}
-	.fas {
 		background-image: linear-gradient($purple, $pink);
 		background-clip: text;
 		-webkit-background-clip: text;
@@ -78,11 +80,10 @@
 
 			@keyframes heartgrow {
 				0% {
-					scale: 0;
-					transform: translateY(-45%);
+					transform: translateY(-45%) scale(0);
 				}
 				to {
-					scale: 1;
+					transform: translateY(-50%) scale(1.05);
 				}
 			}
 		}

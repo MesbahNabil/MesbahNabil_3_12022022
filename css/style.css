@@ -86,18 +86,19 @@ header {
 
 footer {
   background-color: #353535;
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 1rem 1rem 1rem;
   color: white;
 }
 
 footer h2 {
   font-family: "Shrikhand";
-  font-weight: 500;
-  padding: 2rem 1rem;
+  font-weight: 300;
+  padding: 1rem 0;
+  font-size: larger;
 }
 
 footer p {
-  padding: 1rem;
+  padding: 0.5rem;
   margin-right: auto;
 }
 
@@ -306,13 +307,13 @@ body {
   border-radius: 2rem;
   -webkit-transition: 200ms;
   transition: 200ms;
-  -webkit-box-shadow: 2px 1px 8px -2px grey;
-          box-shadow: 2px 1px 8px -2px grey;
   width: 20rem;
   text-align: center;
 }
 
 .explorer .button:hover {
+  -webkit-box-shadow: 4px 3px 17px -4px black;
+          box-shadow: 4px 3px 17px -4px black;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   opacity: 0.9;
@@ -491,9 +492,6 @@ body {
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
-}
-
-.card__description .fas {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
@@ -514,23 +512,23 @@ body {
 
 @-webkit-keyframes heartgrow {
   0% {
-    scale: 0;
-    -webkit-transform: translateY(-45%);
-            transform: translateY(-45%);
+    -webkit-transform: translateY(-45%) scale(0);
+            transform: translateY(-45%) scale(0);
   }
   to {
-    scale: 1;
+    -webkit-transform: translateY(-50%) scale(1.05);
+            transform: translateY(-50%) scale(1.05);
   }
 }
 
 @keyframes heartgrow {
   0% {
-    scale: 0;
-    -webkit-transform: translateY(-45%);
-            transform: translateY(-45%);
+    -webkit-transform: translateY(-45%) scale(0);
+            transform: translateY(-45%) scale(0);
   }
   to {
-    scale: 1;
+    -webkit-transform: translateY(-50%) scale(1.05);
+            transform: translateY(-50%) scale(1.05);
   }
 }
 
@@ -653,9 +651,6 @@ nav .arrow:hover {
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
-}
-
-.tittle .fas {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
@@ -676,12 +671,12 @@ nav .arrow:hover {
 
 @keyframes heartgrow {
   0% {
-    scale: 0;
-    -webkit-transform: translateY(-45%);
-            transform: translateY(-45%);
+    -webkit-transform: translateY(-45%) scale(0);
+            transform: translateY(-45%) scale(0);
   }
   to {
-    scale: 1;
+    -webkit-transform: translateY(-50%) scale(1.05);
+            transform: translateY(-50%) scale(1.05);
   }
 }
 
@@ -956,12 +951,12 @@ nav .arrow:hover {
   border-radius: 2rem;
   -webkit-transition: 200ms;
   transition: 200ms;
-  -webkit-box-shadow: 2px 1px 8px -2px grey;
-          box-shadow: 2px 1px 8px -2px grey;
   text-align: center;
 }
 
 .order .button:hover {
+  -webkit-box-shadow: 4px 3px 17px -4px black;
+          box-shadow: 4px 3px 17px -4px black;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   opacity: 0.9;
